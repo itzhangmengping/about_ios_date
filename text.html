@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+     <p>
+       在IOS5以上版本（不包含IOS5）中的Safari浏览器能正确解释出Javascript中的 new Date('2013-10-21') 的日期对象。
+    但是在IOS5版本里面的Safari解释new Date('2013-10-21') 就不正确，在IOS5的Safari中返回的永远是"Invalid Date"。
+    低版本的Safari解释new Date('2013-10-21')这个对象不一样，在IOS5中的Safari不支持这种写法，
+    想要IOS5中的Safari能正确解析new Date()那么必须这么写
+    new Date('2013/10/21');   或者
+var d = new Date(date);
+d = d.getFullYear() > 0 ? d : new Date(Date.parse(date.replace(/-/g, "/")));
+     </p>
+  </body>
+</html>
